@@ -3,9 +3,8 @@ from flask import Flask, Response, jsonify
 app = Flask(__name__)
 
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
+@app.route('/')
+def index():
     return Response("<h1>Flask on Now 2.0</h1>", mimetype='text/html')
 
 
