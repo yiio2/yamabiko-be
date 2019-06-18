@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return Response("<h1>Flask on Now 2.0</h1>", mimetype='text/html')
+    return Response("<h1>Flask on Now 2.0!</h1>", mimetype='text/html')
 
 
 @app.route("/api/hello", methods=["GET"])
