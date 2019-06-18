@@ -1,4 +1,6 @@
-from flask import Flask, Response, jsonify
+import random
+
+from flask import Flask, Response, jsonify, request
 
 app = Flask(__name__)
 
@@ -11,6 +13,16 @@ def index():
 @app.route("/api/hello", methods=["GET"])
 def hello():
     res = {"message": "hello!"}
+    return jsonify(res)
+
+
+@app.route("/api/echo", methods=["GET"])
+def echo():
+    call = request.args.get("call", "")
+    rand_int = random.randint(0, 10)
+    call_list = [call for i in range(0, rand_int)]
+    msg = "...".join(call_list)
+    res = {"message": msg}
     return jsonify(res)
 
 
