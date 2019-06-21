@@ -15,7 +15,7 @@ def index():
 @app.route("/api/hello", methods=["GET"])
 def hello():
     res = {"message": "hello!"}
-    return jsonify(res)
+    return jsonify(res), 200
 
 
 @app.route("/api/echo", methods=["GET"])
@@ -25,7 +25,7 @@ def echo():
     call_list = [call for i in range(0, rand_int)]
     msg = "...".join(call_list)
     res = {"message": msg}
-    return jsonify(res)
+    return jsonify(res), 200
 
 
 if __name__ == '__main__':
